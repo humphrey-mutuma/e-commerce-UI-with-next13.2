@@ -14,9 +14,7 @@ export default async function TodosList() {
     <div>
       {todos.map((todo) => (
         <p key={todo.id}>
-          <Link href={`/todos/${todo.id}`}>
-            Todo: {todo.id}  
-          </Link>
+          <Link href={`/todos/${todo.id}`}>Todo: {todo.id}</Link>
         </p>
       ))}
     </div>
