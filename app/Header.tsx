@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 function Header() {
@@ -14,9 +15,12 @@ function Header() {
             src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg1.svg"
             alt="logo"
           />
-          <p className="ml-2 lg:ml-4 text-base lg:text-2xl font-bold text-gray-800">
+          <Link
+            href="/"
+            className="ml-2 lg:ml-4 text-base lg:text-2xl font-bold text-gray-800"
+          >
             Sneakers
-          </p>
+          </Link>
         </div>
         <div>
           <button
