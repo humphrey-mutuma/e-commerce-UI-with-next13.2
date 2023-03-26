@@ -40,8 +40,8 @@ function Home() {
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
           <img
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
-            alt="mockup"
+            src="https://cdn.pixabay.com/photo/2013/07/13/10/45/shoes-157716__340.png"
+            alt=" "
           />
         </div>
       </section>

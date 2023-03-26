@@ -1,4 +1,4 @@
-export const sneakers = [
+[
   {
     name: "Air Max 90",
     price: 129.99,
@@ -255,7 +255,29 @@ export const sneakers = [
       "https://cdn.pixabay.com/photo/2017/09/20/22/22/sneakers-2770092__340.png",
     ],
   },
-
+  {
+    name: "Classic Leather Sneakers",
+    price: 69.99,
+    description:
+      "A timeless style, these leather sneakers are versatile and comfortable for everyday wear.",
+    highlights: [
+      "Genuine leather upper",
+      "Cushioned footbed",
+      "Rubber outsole",
+    ],
+    details: {
+      material: "Leather upper",
+      sole: "Rubber outsole",
+      closure: "Lace-up",
+      origin: "Imported",
+    },
+    images: [
+      "https://cdn.pixabay.com/photo/2013/07/13/10/45/shoes-157716__340.png",
+      "https://cdn.pixabay.com/photo/2020/05/04/07/15/nike-5128118__340.jpg",
+      "https://cdn.pixabay.com/photo/2017/09/20/22/22/sneakers-2770092__340.png",
+      "https://cdn.pixabay.com/photo/2016/12/11/12/41/shoes-1899327__340.jpg",
+    ],
+  },
   {
     name: "Minimalist Sneakers",
     price: 49.99,
@@ -344,44 +366,4 @@ export const sneakers = [
       "https://cdn.pixabay.com/photo/2020/05/04/07/15/nike-5128118__340.jpg",
     ],
   },
-  {
-    name: "Classic Leather Sneakers",
-    price: 69.99,
-    description:
-      "A timeless style, these leather sneakers are versatile and comfortable for everyday wear.",
-    highlights: [
-      "Genuine leather upper",
-      "Cushioned footbed",
-      "Rubber outsole",
-    ],
-    details: {
-      material: "Leather upper",
-      sole: "Rubber outsole",
-      closure: "Lace-up",
-      origin: "Imported",
-    },
-    images: [
-      "https://cdn.pixabay.com/photo/2013/07/13/10/45/shoes-157716__340.png",
-      "https://cdn.pixabay.com/photo/2020/05/04/07/15/nike-5128118__340.jpg",
-      "https://cdn.pixabay.com/photo/2017/09/20/22/22/sneakers-2770092__340.png",
-      "https://cdn.pixabay.com/photo/2016/12/11/12/41/shoes-1899327__340.jpg",
-    ],
-  },
-];
-
-export const colors = [
-  { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
-  { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
-  { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
-];
-
-export const sizes = [
-  { name: "XXS", inStock: false },
-  { name: "XS", inStock: true },
-  { name: "S", inStock: true },
-  { name: "M", inStock: true },
-  { name: "L", inStock: true },
-  { name: "XL", inStock: true },
-  { name: "2XL", inStock: true },
-  { name: "3XL", inStock: true },
 ];
