@@ -1,49 +1,21 @@
-export const products = [
+export const sneakers = [
   {
-    id: 1,
-    name: "Earthen Bottle",
-    href: "/product/1",
-    price: "$48",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
-    imageAlt:
-      "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-  },
-  {
-    id: 2,
-    name: "Nomad Tumbler",
-    href: "/product/2",
-    price: "$35",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
-    imageAlt:
-      "Olive drab green insulated bottle with flared screw lid and flat top.",
-  },
-  {
-    id: 3,
-    name: "Focus Paper Refill",
-    href: "/product/3",
-    price: "$89",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg",
-    imageAlt:
-      "Person using a pen to cross a task off a productivity paper card.",
-  },
-  {
-    id: 4,
-    name: "Machined Mechanical Pencil",
-    href: "/product/4",
-    price: "$35",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg",
-    imageAlt:
-      "Hand holding black machined steel mechanical pencil with brass tip and top.",
-  },
-  // More products...
-];
-
-const sneakers = [
-  {
+    id: " 1",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Air Max 90",
     price: 129.99,
     description:
@@ -62,6 +34,22 @@ const sneakers = [
     ],
   },
   {
+    id: "2",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Chuck Taylor All Star",
     price: 59.99,
     description:
@@ -80,6 +68,22 @@ const sneakers = [
     ],
   },
   {
+    id: "3",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Ultra Boost",
     price: 199.99,
     description:
@@ -98,6 +102,22 @@ const sneakers = [
     ],
   },
   {
+    id: "4",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Classic Leather Sneakers",
     price: 69.99,
     description:
@@ -116,6 +136,22 @@ const sneakers = [
     ],
   },
   {
+    id: "5",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Retro High-Top Sneakers",
     price: 79.99,
     description:
@@ -138,6 +174,22 @@ const sneakers = [
     ],
   },
   {
+    id: "6",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Running Shoes",
     price: 99.99,
     description:
@@ -160,6 +212,22 @@ const sneakers = [
     ],
   },
   {
+    id: "7",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Slip-On Sneakers",
     price: 49.99,
     description:
@@ -178,6 +246,22 @@ const sneakers = [
     ],
   },
   {
+    id: "8",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Basketball Shoes",
     price: 129.99,
     description:
@@ -200,6 +284,22 @@ const sneakers = [
     ],
   },
   {
+    id: "9",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Athletic Training Sneakers",
     price: 89.99,
     description:
@@ -222,6 +322,22 @@ const sneakers = [
     ],
   },
   {
+    id: "99",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Skate Shoes",
     price: 59.99,
     description:
@@ -244,6 +360,22 @@ const sneakers = [
     ],
   },
   {
+    id: "10",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "High-Performance Running Shoes",
     price: 149.99,
     description:
@@ -266,6 +398,22 @@ const sneakers = [
     ],
   },
   {
+    id: "11",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Fashion Sneakers",
     price: 79.99,
     description:
@@ -288,6 +436,22 @@ const sneakers = [
     ],
   },
   {
+    id: "12",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Classic Leather Sneakers",
     price: 69.99,
     description:
@@ -310,6 +474,22 @@ const sneakers = [
     ],
   },
   {
+    id: "13",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Minimalist Sneakers",
     price: 49.99,
     description:
@@ -328,6 +508,22 @@ const sneakers = [
     ],
   },
   {
+    id: "14",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Basketball Shoes",
     price: 109.99,
     description:
@@ -350,6 +546,22 @@ const sneakers = [
     ],
   },
   {
+    id: "15",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Slip-On Sneakers",
     price: 59.99,
     description:
@@ -368,6 +580,22 @@ const sneakers = [
     ],
   },
   {
+    id: "16",
+    colors: [
+      { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
+      { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
+      { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
+    ],
+    sizes: [
+      { name: "XXS", inStock: false },
+      { name: "XS", inStock: true },
+      { name: "S", inStock: true },
+      { name: "M", inStock: true },
+      { name: "L", inStock: true },
+      { name: "XL", inStock: true },
+      { name: "2XL", inStock: true },
+      { name: "3XL", inStock: true },
+    ],
     name: "Hiking Boots",
     price: 139.99,
     description:
