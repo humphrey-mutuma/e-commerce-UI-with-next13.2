@@ -1,10 +1,7 @@
-"use client";
-
-import { useState } from "react";
-import { StarIcon } from "@heroicons/react/20/solid";
-import { RadioGroup } from "@headlessui/react";
 import { Sneaker } from "@/typings";
 import { colors, sizes } from "@/data";
+import { StarIcon } from "@heroicons/react/20/solid";
+import { RadioGroup } from "@headlessui/react";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -23,11 +20,8 @@ async function fetchSneaker(id: string) {
 
 export default async function Page({ params: { id } }: Sneaker) {
   const sneaker = await fetchSneaker(id);
-  const [selectedColor, setSelectedColor] = useState(colors[0]);
-  const [selectedSize, setSelectedSize] = useState(sizes[2]);
-  // const [sneaker, setSneaker] = useState({});
-  // const searchParams = useSearchParams();
-  // const search = searchParams.get("id");
+  // const [selectedColor, setSelectedColor] = useState(colors[0]);
+  // const [selectedSize, setSelectedSize] = useState(sizes[2]);
 
   console.log(sneaker);
 
@@ -41,7 +35,7 @@ export default async function Page({ params: { id } }: Sneaker) {
           >
             <li className="text-sm">
               <a
-                href={sneaker.href}
+                href={sneaker._id}
                 aria-current="page"
                 className="font-medium text-gray-500 hover:text-gray-600"
               >
@@ -133,7 +127,7 @@ export default async function Page({ params: { id } }: Sneaker) {
               <div>
                 <h3 className="text-sm font-medium text-gray-900">Color</h3>
 
-                <RadioGroup
+                {/* <RadioGroup
                   value={selectedColor}
                   onChange={setSelectedColor}
                   className="mt-4"
@@ -143,7 +137,7 @@ export default async function Page({ params: { id } }: Sneaker) {
                     Choose a color{" "}
                   </RadioGroup.Label>
                   <div className="flex items-center space-x-3">
-                    {colors.map((color) => (
+                    {sneaker.colors.map((color) => (
                       <RadioGroup.Option
                         key={color.name}
                         value={color}
@@ -170,7 +164,7 @@ export default async function Page({ params: { id } }: Sneaker) {
                       </RadioGroup.Option>
                     ))}
                   </div>
-                </RadioGroup>
+                </RadioGroup> */}
               </div>
 
               {/* Sizes */}
@@ -185,7 +179,7 @@ export default async function Page({ params: { id } }: Sneaker) {
                   </a>
                 </div>
 
-                <RadioGroup
+                {/* <RadioGroup
                   value={selectedSize}
                   onChange={setSelectedSize}
                   className="mt-4"
@@ -195,7 +189,7 @@ export default async function Page({ params: { id } }: Sneaker) {
                     Choose a size{" "}
                   </RadioGroup.Label>
                   <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                    {sizes.map((size) => (
+                    {sneaker.sizes.map((size) => (
                       <RadioGroup.Option
                         key={size.name}
                         value={size}
@@ -252,7 +246,7 @@ export default async function Page({ params: { id } }: Sneaker) {
                       </RadioGroup.Option>
                     ))}
                   </div>
-                </RadioGroup>
+                </RadioGroup> */}
               </div>
 
               <button
@@ -279,8 +273,8 @@ export default async function Page({ params: { id } }: Sneaker) {
 
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                  {sneaker.highlights.map((highlight:string) => (
-                    <li   className="text-gray-400">
+                  {sneaker.highlights.map((highlight: string) => (
+                    <li key={highlight} className="text-gray-400">
                       <span className="text-gray-600">{highlight}</span>
                     </li>
                   ))}
@@ -292,7 +286,28 @@ export default async function Page({ params: { id } }: Sneaker) {
               <h2 className="text-sm font-medium text-gray-900">Details</h2>
 
               <div className="mt-4 space-y-6">
-                <p className="text-sm text-gray-600">{sneaker.details}</p>
+                <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
+                  <li className="text-gray-400">
+                    <span className="text-gray-600">
+                      {sneaker.details.material}
+                    </span>
+                  </li>
+                  <li className="text-gray-400">
+                    <span className="text-gray-600">
+                      {sneaker.details.sole}
+                    </span>
+                  </li>
+                  <li className="text-gray-400">
+                    <span className="text-gray-600">
+                      {sneaker.details.closure}
+                    </span>
+                  </li>
+                  <li className="text-gray-400">
+                    <span className="text-gray-600">
+                      {sneaker.details.origin}
+                    </span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
