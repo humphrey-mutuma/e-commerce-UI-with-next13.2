@@ -3,18 +3,11 @@ import { Schema, model, models } from "mongoose";
 // create a user schema
 const sneakerSchema = new Schema(
   {
-    colors: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Color",
-      },
-    ],
-    sizes: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Size",
-      },
-    ],
+    // addedBy: {
+    //   type: Schema.Types.ObjectId,
+    //   required: [true, "user is required!"],
+    //   ref: "User",
+    // },
     name: { type: String, required: true },
     price: { type: Number, required: true },
     description: { type: String, required: true },
