@@ -3,39 +3,33 @@
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
-import { sneakers } from "@/data";
-import { useSearchParams } from "next/navigation";
+import { Sneaker } from "@/typings";
+import { colors, sizes } from "@/data";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
-type PageParams = {
-  params: {
-    todo: string;
-  };
-};
 
-async function fetchTodo(id: string) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/todos/${id}`,
-    {
-      next: { revalidate: 60 }, //ISR
-    }
-  );
-  const todo = await res.json();
-  return todo;
+async function fetchSneaker(id: string) {
+  const res = await fetch(`http://localhost:3000/api/sneakers/${id}`, {
+    next: { revalidate: 10 },
+  });
+  const sneaker = await res.json();
+
+  return sneaker;
 }
-export default async function page({ params: { id } }: PageParams) {
-  const todo_item = await fetchTodo(id);
-  //  const [selectedColor, setSelectedColor] = useState(sneakers[0].colors[0]);
-  // const [selectedSize, setSelectedSize] = useState(sneakers[0].sizes[2]);
+
+export default async function Page({ params: { id } }: Sneaker) {
+  const sneaker = await fetchSneaker(id);
+  const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const [selectedSize, setSelectedSize] = useState(sizes[2]);
   // const [sneaker, setSneaker] = useState({});
   // const searchParams = useSearchParams();
   // const search = searchParams.get("id");
 
-  // console.log(search);
+  console.log(sneaker);
 
   return (
     <div className="bg-white">
@@ -45,23 +39,13 @@ export default async function page({ params: { id } }: PageParams) {
             role="list"
             className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
           >
-            <li className="text-sm flex items-center">
-              <svg
-                width={16}
-                height={20}
-                viewBox="0 0 16 20"
-                fill="currentColor"
-                aria-hidden="true"
-                className="h-5 w-4 text-gray-300"
-              >
-                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-              </svg>{" "}
+            <li className="text-sm">
               <a
-                href={sneakers.id}
+                href={sneaker.href}
                 aria-current="page"
                 className="font-medium text-gray-500 hover:text-gray-600"
               >
-                {sneakers.name}
+                {sneaker.name}
               </a>
             </li>
           </ol>
@@ -71,49 +55,49 @@ export default async function page({ params: { id } }: PageParams) {
         <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
           <div className="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
             <img
-              src={sneakers.images[0].src}
-              alt={sneakers.images[0].alt}
+              src={sneaker.images[0]}
+              alt=""
               className="h-full w-full object-cover object-center"
             />
           </div>
           <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
             <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
               <img
-                src={sneakers.images[1].src}
-                alt={sneakers.images[1].alt}
+                src={sneaker.images[1]}
+                alt=""
                 className="h-full w-full object-cover object-center"
               />
             </div>
             <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
               <img
-                src={sneakers.images[2].src}
-                alt={sneakers.images[2].alt}
+                src={sneaker.images[2]}
+                alt=""
                 className="h-full w-full object-cover object-center"
               />
             </div>
           </div>
           <div className="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
             <img
-              src={sneakers.images[3].src}
-              alt={sneakers.images[3].alt}
+              src={sneaker.images[3]}
+              alt=""
               className="h-full w-full object-cover object-center"
             />
           </div>
         </div>
 
-        {/* sneakers info */}
+        {/* sneaker info */}
         <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-              {sneakers.name}
+              {sneaker.name}
             </h1>
           </div>
 
           {/* Options */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
-            <h2 className="sr-only">sneakers information</h2>
+            <h2 className="sr-only">sneaker information</h2>
             <p className="text-3xl tracking-tight text-gray-900">
-              {sneakers.price}
+              {sneaker.price}
             </p>
 
             {/* Reviews */}
@@ -159,7 +143,7 @@ export default async function page({ params: { id } }: PageParams) {
                     Choose a color{" "}
                   </RadioGroup.Label>
                   <div className="flex items-center space-x-3">
-                    {sneakers.colors.map((color) => (
+                    {colors.map((color) => (
                       <RadioGroup.Option
                         key={color.name}
                         value={color}
@@ -211,7 +195,7 @@ export default async function page({ params: { id } }: PageParams) {
                     Choose a size{" "}
                   </RadioGroup.Label>
                   <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                    {sneakers.sizes.map((size) => (
+                    {sizes.map((size) => (
                       <RadioGroup.Option
                         key={size.name}
                         value={size}
@@ -286,9 +270,7 @@ export default async function page({ params: { id } }: PageParams) {
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
-                <p className="text-base text-gray-900">
-                  {sneakers.description}
-                </p>
+                <p className="text-base text-gray-900">{sneaker.description}</p>
               </div>
             </div>
 
@@ -297,8 +279,8 @@ export default async function page({ params: { id } }: PageParams) {
 
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                  {sneakers.highlights.map((highlight) => (
-                    <li key={highlight} className="text-gray-400">
+                  {sneaker.highlights.map((highlight:string) => (
+                    <li   className="text-gray-400">
                       <span className="text-gray-600">{highlight}</span>
                     </li>
                   ))}
@@ -310,7 +292,7 @@ export default async function page({ params: { id } }: PageParams) {
               <h2 className="text-sm font-medium text-gray-900">Details</h2>
 
               <div className="mt-4 space-y-6">
-                <p className="text-sm text-gray-600">{sneakers.details}</p>
+                <p className="text-sm text-gray-600">{sneaker.details}</p>
               </div>
             </div>
           </div>

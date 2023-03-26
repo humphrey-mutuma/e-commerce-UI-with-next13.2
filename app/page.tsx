@@ -1,6 +1,19 @@
-import Products from "./Gallery";
+import { Sneaker } from "@/typings";
+import Gallery from "./Gallery";
 
-function Home() {
+async function fetchSneakers(id: string) {
+  const res = await fetch(`http://localhost:3000/api/sneakers`, {
+    next: { revalidate: 60 },
+  });
+
+  const sneaker = await res.json();
+
+  return sneaker.data;
+}
+
+export default async function Page({ params: { id } }: Sneaker) {
+  const sneakers = await fetchSneakers(id);
+
   return (
     <main className="bg-white dark:bg-gray-900">
       <section className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
@@ -45,9 +58,7 @@ function Home() {
           />
         </div>
       </section>
-      <Products />
+      <Gallery sneakers={sneakers} />
     </main>
   );
 }
-
-export default Home;
