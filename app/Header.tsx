@@ -49,13 +49,11 @@ function Header() {
             </button>
             <ul className="flex text-3xl md:text-base items-center py-8 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent  z-20">
               <li className="text-gray-600 text-lg hover:text-gray-800 cursor-pointer md:ml-10 pt-10 md:pt-0">
-                <a href="javascript:void(0)">Company</a>
+                <Link href="/">Company</Link>
               </li>
+
               <li className="text-gray-600 text-lg hover:text-gray-800 cursor-pointer md:ml-10 pt-10 md:pt-0">
-                <a href="javascript:void(0)">Features</a>
-              </li>
-              <li className="text-gray-600 text-lg hover:text-gray-800 cursor-pointer md:ml-10 pt-10 md:pt-0">
-                <a href="javascript:void(0)">Contact</a>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </div>
